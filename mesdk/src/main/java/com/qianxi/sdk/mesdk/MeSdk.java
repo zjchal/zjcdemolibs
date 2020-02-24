@@ -1,10 +1,19 @@
 package com.qianxi.sdk.mesdk;
 
+import java.security.MessageDigest;
+
 public class MeSdk {
 
-    private  static  MeSdk instance = new MeSdk();
+    private  static  MeSdk instance = null;
 
-    public  MeSdk getInstance(){
+    public  MeSdk(){
+
+    }
+
+    public static MeSdk getInstance(){
+        if(null==instance){
+            instance = new MeSdk();
+        }
         return instance;
     }
 
